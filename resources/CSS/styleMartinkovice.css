@@ -1,0 +1,1038 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    --first-color: hsl(40, 70%, 55%); /* Golden mustard yellow for a warm and inviting feel */
+    --first-color-alt: hsl(40, 60%, 45%); /* Darker golden mustard for accents */
+    --first-color-light: hsl(40, 50%, 70%); /* Light golden yellow for backgrounds */
+    --first-color-lighten: hsl(40, 100%, 90%); /* Very light yellow for subtle accents */
+
+    --second-color: hsl(180, 20%, 45%); /* Earthy olive green for balance and nature-inspired vibe */
+
+    --title-color: hsl(30, 30%, 25%); /* Dark brownish tone for titles */
+    --text-color: hsl(30, 20%, 40%); /* Neutral brownish-gray for main text */
+    --text-color-light: hsl(30, 30%, 60%); /* Lighter brownish-gray for secondary text */
+
+    --border-color: hsl(40, 50%, 85%); /* Light golden tan for borders */
+    --body-color: hsl(40, 20%, 98%); /* Very light golden tan for background */
+    --container-color: hsl(40, 30%, 92%); /* Slightly darker golden tan for containers */
+  
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Nunito', sans-serif;
+  --heading-font: 'Quicksand', sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  width: 100%;
+  overflow-x: hidden;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  font-family: var(--heading-font);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: .3s;
+  color: var(--first-color);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--first-color-alt);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button {
+  font-family: var(--body-font);
+  outline: none;
+  border: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+}
+
+.section__title span {
+  color: var(--second-color);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--second-color);
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+
+/* Navbar container */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically centers items in the navbar */
+  padding: 20px;
+  position: relative; /* Ensures that the menu is positioned correctly */
+}
+
+/* Container for logo and text on the left */
+.nav__left {
+  display: flex;
+  align-items: center; /* Centers the logo and text vertically */
+}
+
+/* Styling for logo */
+.nav__logo .logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* Styling for text next to the logo */
+.nav__text span {
+  font-size: 18px;
+}
+
+/* Styling for the navigation menu */
+.nav__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  justify-content: flex-end; /* Aligns items to the right */
+}
+
+/* Styling for nav items */
+.nav__item {
+  margin-left: 20px;
+}
+
+/* Styling for nav links */
+.nav__link {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Active link */
+.nav__link.active-link {
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--first-color-alt);
+}
+
+/* Language flags container */
+.nav__flags {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* Adds some space between nav items and flags */
+}
+
+.nav__flags .lang-option {
+  display: inline-block;
+  margin-left: 10px; /* Space between flags */
+}
+
+.nav__flags .lang-option img {
+  width: 22px; /* Size of the flag icon */
+  height: 22px;
+  transition: transform 0.3s ease;
+  border: 1.3px solid #333;
+  border-radius: 75%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav__flags .lang-option:hover img {
+  transform: scale(1.1); /* Slightly enlarge the flag on hover */
+}
+
+/*=============== HAMBURGER MENU ===============*/
+
+/* Hide the regular menu on small screens by default */
+.nav__menu {
+  display: flex;
+}
+
+/* Hide the regular menu on small screens */
+.nav__hamburger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Hamburger bars style */
+.nav__hamburger div {
+  width: 100%;
+  height: 5px;
+  background-color: var(--first-color);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile menu styling when active */
+.nav__menu.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Add a slight animation for the items when the menu is open */
+.nav__menu.open .nav__item {
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Style the links inside the mobile menu */
+.nav__menu.open .nav__link {
+  font-size: 18px;
+  padding: 10px;
+}
+
+/* ================== Media query for small screens ================== */
+@media screen and (max-width: 768px) {
+  /* Hide the regular nav menu */
+  .nav__menu {
+    display: none;
+  }
+
+  /* Show the hamburger icon on small screens */
+  .nav__hamburger {
+    display: block;
+  }
+
+  /* When the menu is open, show it */
+  .nav__menu.open {
+    display: flex;
+  }
+
+  .nav__flags {
+    margin-left: 0; /* Remove margin for flags on small screens */
+    margin-top: 10px; /* Adds spacing for better layout */
+  }
+}
+
+
+/* ================ Hero Section Styles ==================== */
+.hero {
+  position: relative;
+  background-image: url('../Images/Martinkovice_main.webp');
+  background-size: cover;
+  background-position: center;
+  height: 1100px; /* Default height for large screens */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--title-color);
+  text-align: center;
+}
+
+.hero__content {
+  max-width: 90%;
+  padding: 20px; /* Adjusted padding */
+  z-index: 5;
+}
+
+.hero__title {
+  font-size: 3rem; /* Default font size for large screens */
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 5;
+}
+
+.hero__description {
+  font-size: 1.25rem; /* Default font size for large screens */
+  margin-bottom: 20px;
+  line-height: 1.6;
+  z-index: 5;
+}
+
+/* ================ Responsive Styles ==================== */
+
+/* For medium-sized devices (tablets) */
+@media (max-width: 1024px) {
+  .hero {
+      height: 600px; /* Reduced height for tablets */
+  }
+
+  .hero__title {
+      font-size: 2.5rem; /* Smaller title font size */
+  }
+
+  .hero__description {
+      font-size: 1.1rem; /* Smaller description font size */
+  }
+}
+
+/* For small devices (smartphones) */
+@media (max-width: 768px) {
+  .hero {
+      height: 400px; /* Further reduced height for mobile */
+  }
+
+  .hero__title {
+      font-size: 2rem; /* Even smaller title font size */
+  }
+
+  .hero__description {
+      font-size: 1rem; /* Smaller description font size */
+      margin-bottom: 15px; /* Less space for mobile */
+  }
+}
+
+/* For very small devices (extra small phones) */
+@media (max-width: 480px) {
+  .hero {
+      height: 300px; /* Height adjustment for very small screens */
+  }
+
+  .hero__title {
+      font-size: 1.75rem; /* Even smaller title font size */
+  }
+
+  .hero__description {
+      font-size: 0.9rem; /* Smaller font size for description */
+  }
+}
+
+
+/* ========================== Description Styles ===================*/
+.description {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.description__title {
+    margin-bottom: 1rem;
+}
+
+.fa-fish {
+  padding: 10px;
+  font-size: 1.25rem;
+  color: #003580;
+}
+
+/* ===================== Amenities Styles ====================== */
+.amenities {
+    padding: 2rem;
+}
+
+.amenities__title {
+    margin-bottom: 2rem;
+}
+
+.amenities__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.amenities__cards i {
+    padding: 10px;
+    background-color: var(--first-color-lighten);
+    border: 1px solid var(--second-color);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: var(--second-color);
+    margin-bottom: 0.75rem;
+}
+
+#no__pets__allowed__icon {
+  padding: 10px;
+  background-color: var(--first-color-lighten);
+  border: 1px solid #B7410E;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: #B7410E;
+  margin-bottom: 0.75rem;
+}
+
+/* Grid layout for the amenities section */
+.amenities__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px; /* Limit width for larger screens */
+}
+
+/* Style for individual amenities cards */
+.amenities__cards {
+    background-color: var(--container-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+/* Responsive Styles for smaller screens */
+@media (max-width: 768px) {
+    .amenities__grid {
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .amenities__grid {
+        grid-template-columns: 1fr; /* 1 column layout for very small screens */
+    }
+}
+
+/*======================== Gallery Styles ====================================*/
+.gallery {
+    padding: 2rem;
+}
+
+.gallery__title {
+    margin-bottom: 2rem;
+}
+
+.gallery__container {
+    text-align: center;
+}
+
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px; /* Limit width for larger screens */
+}
+
+/* Style for each gallery item */
+.gallery__item img {
+    width: 100%;
+    height: 200px!important;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for images */
+.gallery__item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Responsive Styles for smaller screens */
+@media (max-width: 768px) {
+    .gallery__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns layout on smaller screens */
+        grid-template-rows: auto; /* Adjust rows automatically */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery__grid {
+        grid-template-columns: 1fr; /* 1 column layout for very small screens */
+        grid-template-rows: auto; /* Adjust rows automatically */
+    }
+}
+
+/* Ensure images are correctly displayed and clickable */
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* ===================== Modal Styling =============== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+#modalImage {
+  position: absolute;
+  top: 50%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%); /* Adjust by 50% of the image's width and height to truly center */
+  width: 60%; /* You can adjust this percentage to your preference */
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.close:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #B7410E;
+}
+
+.modal-navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prev, .next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+  border-radius: 0.25rem;
+  margin: 0 1.5rem 0 1.5rem;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--second-color);
+}
+
+
+/* ===================== Location Styles ====================== */
+.location {
+  padding: 2rem;
+}
+
+.location__title {
+  text-align: center; /* Center the title */
+  margin-bottom: 2rem; /* Space between the title and the grid */
+}
+
+.location__container {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for the single card */
+  gap: 2rem; /* Gap between the card and the container */
+  max-width: 350px; /* Limit the width */
+  margin: 0 auto; /* Center the container */
+}
+
+.location__cards {
+  background-color: var(--body-color);
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  /* Keep the card size consistent with the previous two-card layout */
+  width: 100%; 
+  max-width: 700px; 
+  margin: 0 auto;
+}
+
+.location__card-info {
+  margin-bottom: 1rem;
+}
+
+.location__card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.location__card-description {
+  font-size: var(--smaller-font-size);
+  margin-bottom: 1rem;
+}
+
+.location__cards iframe {
+  width: 100%;
+  height: 300px; /* Maintain consistent iframe height */
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Responsive Styles for smaller screens */
+@media (max-width: 768px) {
+  .location__container {
+    grid-template-columns: 1fr; /* Stack the single card on smaller screens */
+  }
+}
+
+#google-maps-icon {
+  padding: 6px;
+  font-size: 1.25rem;
+  color: #DB4437;  
+}
+
+
+/*=============== CONTACT ===============*/
+.contact__container {
+  display: flex;
+  justify-content: center; /* Centers the entire container horizontally */
+  align-items: center; /* Vertically centers the container */
+}
+
+.contact__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center; /* Centers each card horizontally within the grid */
+}
+
+.contact__card-box {
+  display: flex;
+  flex-direction: column; /* Arrange elements vertically */
+  justify-content: space-between; /* Push the button to the bottom */
+  background-color: var(--body-color);
+  border: 2px solid var(--border-color);
+  padding: 1.25rem .75rem;
+  border-radius: 1rem;
+  transition: .3s;
+  width: 100%; /* Ensure it spans the available width inside the grid */
+  max-width: 400px; /* Optional: sets a max width to prevent cards from being too wide */
+}
+
+.contact__card-info {
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact__card i {
+  padding: 6px;
+  background-color: var(--first-color-lighten);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
+.contact__card-title {
+  font-size: var(--normal-font-size);
+}
+
+.contact__card-description {
+  font-size: var(--smaller-font-size);
+}
+
+.contact__card-button {
+  margin-top: auto; /* Pushes the button to the bottom of the container */
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center;
+  font-size: var(--small-font-size);
+  padding: 14px 14px;
+  border-radius: .25rem;
+  background: var(--body-color);
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  box-shadow: none;
+  transition: all .4s ease;
+}
+
+.contact__card-button:hover {
+  background-color: var(--first-color);
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact__card-box:hover {
+  box-shadow: 0 12px 40px hsla(30, 100%, 50%, 0.3);
+} 
+  
+  /* ===================== Booking.com Styles ====================== */
+.booking {
+  padding: 2rem;
+}
+
+.booking__title {
+  margin-bottom: 2rem;
+}
+
+.booking__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.booking__logo {
+  border: 2px solid #003580;
+  background: var(--body-color);
+  transition: .3s;
+  padding: 10px 10px;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: auto;
+}
+
+.booking__logo:hover {
+  transform: scale(1.05);
+}
+
+/* Grid layout for the booking.com section */
+.booking__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 equal columns */
+  gap: 2rem;
+  width: 50%;
+  margin: 0 auto;
+  max-width: 1200px; /* Limit width for larger screens */
+}
+
+/* Style for individual booking.com cards */
+.booking__cards {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+/* Responsive Styles for smaller screens */
+@media (max-width: 768px) {
+  .booking__grid {
+      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+  }
+}
+
+@media (max-width: 480px) {
+  .booking__grid {
+      grid-template-columns: 1fr; /* 1 column layout for very small screens */
+  }
+} 
+
+/*=============== FOOTER ===============*/
+
+.footer {
+  padding: 30px 20px;
+  font-size: 14px; /* Base font size */
+}
+
+.footer__info {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  font-size: 12px!important;
+  gap: 20px; /* Added gap for better spacing between columns */
+}
+
+.footer__left,
+.footer__right,
+.footer__center {
+  padding: 10px;
+}
+
+.footer__left,
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Vertical space between each item */
+}
+
+.footer__right {
+  text-align: right;
+}
+
+.footer__center {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center; /* Center-align the text in the center column */
+}
+
+.footer__copy {
+  margin-bottom: 10px; /* Adds some space between copyright and contact details */
+}
+
+.footer__copy a {
+  margin-top: 5px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.footer__copy a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .footer__info {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px; /* Adjusted gap between sections */
+  }
+
+  .footer__left,
+  .footer__right,
+  .footer__center {
+      width: 100%;
+      text-align: center; /* Ensures all text is centered on mobile devices */
+  }
+
+  .footer__left {
+      margin-bottom: 15px;
+  }
+
+  .footer__center {
+      margin-bottom: 15px; /* Adds spacing between the center and right sections */
+  }
+}
+
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: var(--first-color-lighten);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--first-color);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--first-color-alt);
+  border-radius: .5rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width:350px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .section {
+    padding: 3.5rem 0 1rem;
+  }
+
+   .contact__card {
+    grid-template-columns: repeat(1, 180px);
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+  .nav__menu {
+    padding: 1.3rem 1.5rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width:576px) {
+  .nav__menu {
+    width: 342px;
+  }
+
+  .contact__card {
+    grid-template-columns: repeat(2, 192px);
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 767px) {
+
+  .contact__card {
+    justify-content: initial;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width:1023px) {
+  .section {
+    padding: 7.5rem 0 1rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .nav__menu {
+    width: initial;
+    margin-left: auto;
+  }
+
+  .nav__list {
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  .nav__link {
+    color: var(--text-color-light);
+  }
+
+  .nav__link i {
+    display: none;
+  }
+
+  .active-link {
+    background: none;
+    box-shadow: none;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+  }
+
+  .contact__card {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  .contact__card-box {
+    padding: 28px 1.5rem 1.5rem ;
+  }
+
+  .footer__info{
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* For 2K & 4K resolutions */
+@media screen and (min-width: 2040px) {
+  body {
+    zoom: 1.5;
+  }
+}
+@media screen and (min-width: 3840px) {
+  body {
+    zoom: 2;
+  }
+}
