@@ -233,6 +233,38 @@ button {
   transform: scale(1.1); /* Slightly enlarge the flag on hover */
 }
 
+/*=================== Tooltip styles =================*/
+.nav__flags a {
+  position: relative; /* Ensure tooltip is positioned relative to the flag */
+}
+
+/* Tooltip hidden by default */
+.nav__flags a::after {
+  content: attr(title);
+  position: absolute;
+  top: 40px;  /* Adjust position */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;  /* Start with an invisible tooltip */
+  visibility: hidden;  /* Make sure it's hidden */
+  transition: opacity 0.2s ease, visibility 0s 0.2s; /* Smooth transition */
+  z-index: 10;
+}
+
+/* Show tooltip on hover */
+.nav__flags a:hover::after {
+  opacity: 1;  /* Make tooltip visible */
+  visibility: visible;  /* Show tooltip */
+  transition: opacity 0.3s ease, visibility 0s;  /* Make it appear smoothly */
+}
+
+
 /*=============== HAMBURGER MENU ===============*/
 
 /* Hide the regular menu on small screens by default */
