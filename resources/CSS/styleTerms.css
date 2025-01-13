@@ -56,18 +56,6 @@
   }
 }
 
-@media screen and (min-width: 320px) {
-  :root {
-    --biggest-font-size: 4rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1.2rem;
-    --small-font-size: 1rem;
-    --smaller-font-size: 1rem;
-  }
-}
-
 /*=============== BASE ===============*/
 * {
   box-sizing: border-box;
@@ -775,7 +763,6 @@ button {
     margin-bottom: 2.5rem;
   }
 
-
   .contact__card {
     grid-template-columns: repeat(2, 200px);
   }
@@ -790,8 +777,6 @@ button {
     justify-content: space-between;
     padding-bottom: 2rem;
   }
-
-
 }
 
 @media screen and (min-width: 1040px) {
