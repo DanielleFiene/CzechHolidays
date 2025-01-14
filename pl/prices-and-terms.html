@@ -13,10 +13,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../resources/Images/favicon-16x16.png">
     <link rel="manifest" href="../resources/Images/site.webmanifest">
     <link href="../resources/CSS/normalize.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../resources/CSS/style.css" type="text/css">
+    <link rel="stylesheet" href="../resources/CSS/styleTerms.css" type="text/css">
     <title>Hofje.cz | Domy rekreacyjne w Czechach</title>
 </head>
-
 <body class="">
     <main>
     <!--header section-->
@@ -27,7 +26,7 @@
                     <a href="./index.html"><img src="../resources/Images/logo.png" alt="Logo" class="logo"></a>
                 </div>
                 <div class="nav__text">
-                    <a href="./index.html" class="nav__link active-link">
+                    <a href="./index.html" class="nav__link">
                         <span>Hofje.cz</span>
                     </a>
                 </div>
@@ -57,7 +56,7 @@
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a href="./prices-and-terms.html" class="nav__link">
+                        <a href="./prices-and-terms.html" class="nav__link active-link">
                             <span>Ceny & Warunki</span>
                         </a>
                     </li>
@@ -65,10 +64,10 @@
 
                  <!-- Language flags container on the right side -->
             <div class="nav__flags">
-                <a href="../en/index.html" class="lang-option" data-lang="en" title="English"><img src="../resources/Images/Flag_of_the_United_Kingdom.svg.webp" alt="English"></a>
-                <a href="../cz/index.html" class="lang-option" data-lang="cz" title="Čeština"><img src="../resources/Images/Flag_of_the_Czech_Republic.svg.png" alt="Czech"></a>
-                <a href="../de/index.html" class="lang-option" data-lang="de" title="Deutsch"><img src="../resources/Images/Flag_of_Germany.svg.png" alt="German"></a>
-                <a href="../pl/index.html" class="lang-option" data-lang="pl" title="Polski"><img src="../resources/Images/Flag_of_Poland.svg.png" alt="Polish"></a>
+                <a href="../en/prices-and-terms.html" class="lang-option" data-lang="en" title="English"><img src="../resources/Images/Flag_of_the_United_Kingdom.svg.webp" alt="English"></a>
+                <a href="../cz/prices-and-terms.html" class="lang-option" data-lang="cz" title="Čeština"><img src="../resources/Images/Flag_of_the_Czech_Republic.svg.png" alt="Czech"></a>
+                <a href="../de/prices-and-terms.html" class="lang-option" data-lang="de" title="Deutsch"><img src="../resources/Images/Flag_of_Germany.svg.png" alt="German"></a>
+                <a href="../pl/prices-and-terms.html" class="lang-option" data-lang="pl" title="Polski"><img src="../resources/Images/Flag_of_Poland.svg.png" alt="Polish"></a>
             </div>
 
             </div>
@@ -78,127 +77,57 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero__content container">
-            <h1 class="hero__title">Witaj na Hofje.cz</h1>
-            <p class="hero__description">Odkryj nasze unikalne domki rekreacyjne i przeżyj relaksujący wypoczynek na czeskiej wsi.</p>
         </div>
     </section>
     
-
-
-    <!-- New Section for Holiday Homes -->
-<section class="holiday-homes section" id="holiday-homes">
-    <div class="holiday-homes__container container">
-        <!-- Title and Description -->
-        <div class="holiday-homes__intro">
-            <h2 class="holiday-homes__title">Nasze przytulne domy rekreacyjne</h2>
-            <p class="holiday-homes__description">
-                Przeżyj relaksujący pobyt w jednym z naszych urokliwych domów rekreacyjnych w pięknej czeskiej scenerii.
-                Niezależnie od tego, czy szukasz spokojnego wypoczynku, czy rodzinnych wakacji, nasze domy oferują komfort, spokój i mnóstwo przestrzeni.
-            </p>
-        </div>
-
-        <!-- Holiday Homes Cards -->
-        <div class="holiday-homes__cards grid">
-            <!-- First Home Card -->
-            <div class="holiday-homes__card">
-                <a href="../pl/martinkovice.html" target="_blank">
-                    <img src="../resources/Images/Martinkovice_main.webp" alt="Statek Hofje" class="holiday-homes__image" loading="lazy">
-                  </a>                  
-                <h3 class="holiday-homes__card-title">Statek Hofje | Martínkovice</h3>
-                <p class="holiday-homes__card-description">
-                    Historyczna zagroda, odpowiednia dla grup do 12 osób.
-                </p>
-                <a href="../pl/martinkovice.html" target="_blank" class="holiday-homes__card-button">Więcej informacji</a>
-            </div>
-
-            <!-- Second Home Card 
-            <div class="holiday-homes__card">
-                <img src="./resources/images/Kratka main.jpg" alt="Home 2" class="holiday-homes__image">
-                <h3 class="holiday-homes__card-title">Kratka Apartment</h3>
-                <p class="holiday-homes__card-description">
-                    A spacious family home in the center of Broumov.
-                </p>
-                <a href="#" class="holiday-homes__card-button">More Info</a>
-            </div>-->
-
-            <!-- Third Home Card -->
-            <div class="holiday-homes__card">
-                <a href="../pl/sonov.html" target="_blank">
-                    <img src="../resources/Images/Sonov_main.webp" alt="Haus Frilo" class="holiday-homes__image" loading="lazy">
-                  </a>                  
-                <h3 class="holiday-homes__card-title">Haus Frilo | Šonov</h3>
-                <p class="holiday-homes__card-description">
-                    Wiejski dom, który oferuje zakwaterowanie dla maksymalnie 6 gości.
-                </p>
-                <a href="../pl/sonov.html" class="holiday-homes__card-button">Więcej informacji</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Location section -->
-<section class="location section" id="contact">
-    <h2 class="location__title">Lokalizacja</h2>
-    <div class="location__container container grid">
-        <!-- Martínkovice Location -->
-        <div class="location__cards">
-            <div class="location__card-info">
-                <i class="fas fa-map-marker-alt" id="google-maps-icon"></i>
-                <div>
-                    <h3 class="location__card-title">
-                        Statek Hofje
-                    </h3>
-                    <p class="location__card-description">
-                        Martínkovice 254<br>
-                        550 01, Martínkovice<br>
-                        Czech Republic<br>
+<!-- Prices and Terms Section -->
+<section class="prices section" id="prices-and-terms">
+    <div class="prices__container container">
+        <h2 class="prices__title">Ceny & Warunki</h2>
+        <div class="prices__grid">
+            <!-- Statek Hofje Card -->
+            <div class="prices__cards">
+                <div class="prices-homes__card">
+                    <i class="fa-solid fa-map-marker-alt" id="google-maps-icon"></i>
+                    <h4>Statek Hofje | Martínkovice</h4>
+                    <p>
+                        <strong>Ceny:</strong> <br><br>
+                        <strong>Dodatkowe łóżka:</strong> 400 CZK/łóżko/noc.<br>
+                        <strong>Podatek turystyczny:</strong> 20 CZK/osoba/noc (18+).<br>
+                        <strong>Zwrotna kaucja:</strong> 5 000 CZK.<br>
                     </p>
-                    <!-- Embed the Google Maps clickable iframe for Martínkovice -->
-                        <a href="https://www.google.com/maps?q=Martínkovice+254,+Czech+Republic&z=15&t=k" target="_blank" style="position: relative; display: inline-block;">
-                            <iframe 
-                                src="https://www.google.com/maps?q=Martínkovice+254,+Czech+Republic&z=15&t=k&output=embed" 
-                                width="600" 
-                                height="450" 
-                                frameborder="0" 
-                                style="border:0; pointer-events: none;"
-                                loading="lazy" 
-                                allowfullscreen>
-                            </iframe>
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; cursor: pointer;"></div>
-                        </a>
-
-
+                    <p>
+                        <strong>Warunki:</strong><br>
+                        <ul>
+                            <li><strong>Check-in:</strong> 15:00 - 17:00.</li>
+                            <li><strong>Check-out:</strong> 10:00.</li>
+                            <li><strong>Zwierzęta domowe:</strong> Zwierzęta domowe są zabronione.</li>
+                            <li><strong>Palenie:</strong> Palenie jest zabronione w budynku.</li>
+                        </ul>
+                    </p>                   
                 </div>
             </div>
-        </div>
-
-        <!-- Šonov Location -->
-        <div class="location__cards">
-            <div class="location__card-info">
-                <i class="fas fa-map-marker-alt" id="google-maps-icon"></i>
-                <div>
-                    <h3 class="location__card-title">
-                        Haus Frilo
-                    </h3>
-                    <p class="location__card-description">
-                        Šonov 240<br>
-                        550 01, Šonov<br>
-                        Czech Republic<br>
+            <!-- Haus Frilo Card -->
+            <div class="prices__cards">
+                <div class="prices-homes__card">
+                    <i class="fa-solid fa-map-marker-alt" id="google-maps-icon"></i>
+                    <h4>Haus Frilo | Šonov</h4>
+                    <p>
+                        <strong>Ceny:</strong> <br><br>
+                        <strong>Dodatkowe łóżka:</strong> 400 CZK/łóżko/noc.<br>
+                        <strong>Podatek turystyczny:</strong> 20 CZK/osoba/noc (18+).<br>
+                        <strong>Zwrotna kaucja:</strong> 5 000 CZK.<br>
                     </p>
-                    <!-- Embed the Google Maps clickable iframe for Šonov -->
-                    <a href="https://www.google.com/maps?q=Šonov+240,+Czech+Republic&z=15&t=k" target="_blank" style="position: relative; display: inline-block;">
-                        <iframe 
-                            src="https://www.google.com/maps?q=Šonov+240,+Czech+Republic&z=15&t=k&output=embed"
-                            width="600" 
-                            height="450" 
-                            frameborder="0" 
-                            style="border:0; pointer-events: none;" 
-                            loading="lazy"
-                            allowfullscreen>
-                        </iframe>
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; cursor: pointer;"></div>
-                    </a>
-                    
+                    <p>
+                        <strong>Warunki:</strong><br>
+                        <ul>
+                            <li><strong>Check-in:</strong> 18:00 - 20:00.</li>
+                            <li><strong>Check-out:</strong> 10:00.</li>
+                            <li><strong>Zwierzęta domowe:</strong> Zwierzęta domowe są zabronione.</li>
+                            <li><strong>Palenie:</strong> Palenie jest zabronione w budynku.</li>
+                        </ul>
+                    </p>                                      
+                </div>
             </div>
         </div>
     </div>
@@ -296,7 +225,6 @@
             IČO: 27169481<br>
             DIČ: CZ27169481<br>
             </span>
-            
         </div>
     </div>
 </footer>
