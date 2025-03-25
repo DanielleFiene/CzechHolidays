@@ -117,7 +117,7 @@ button {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 1024px;
+  max-width: 1400px;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -337,7 +337,6 @@ button {
   font-size: 3rem; /* Default font size for large screens */
   font-weight: bold;
   margin-bottom: 15px;
-  text-transform: uppercase;
   position: relative;
   z-index: 5;
 }
@@ -427,6 +426,7 @@ button {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 .amenities__cards i {
@@ -491,14 +491,17 @@ button {
 }
 
 .gallery__container {
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .gallery__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
     max-width: 1200px; /* Limit width for larger screens */
 }
@@ -506,10 +509,11 @@ button {
 /* Style for each gallery item */
 .gallery__item img {
     width: 100%;
-    height: 200px!important;
+    height: 300px;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 /* Hover effect for images */
@@ -532,12 +536,6 @@ button {
     }
 }
 
-/* Ensure images are correctly displayed and clickable */
-.gallery__item img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
 
 /* ===================== Modal Styling =============== */
 .modal {
